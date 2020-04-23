@@ -1,0 +1,308 @@
+* {
+    font-family: 'Arial';
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    margin: 50px;
+    background-color: #EEEEEE;
+}
+
+textarea {
+    height: 2.25em;
+    width: 50em;
+    background-color: #FFFFFF;
+    border-radius: 0 5px 5px 0;
+    border-width: 0;
+    /*
+    Auf none setzen, damit man die Göße des Textfelds nicht verändern
+     */
+    resize: none;
+
+    padding: 0.5em;
+}
+
+textarea[name='question'] {
+    height: 4.5em;
+}
+textarea:read-only {
+    height: 1.125em;
+    background-color: rgba(128, 128, 128, 0.207);
+}
+textarea.correct {
+    background-color: rgba(0, 255, 0, 0.207);
+}
+textarea.wrong {
+    background-color: rgba(255, 0, 0, 0.207);
+}
+textarea.short {
+    height: 1.125em;
+    width: 25em;
+}
+
+select {
+    width: 25em;
+    height: 2em;
+    border-radius: 0 5px 5px 0;
+    border-width: 0;
+}
+
+select#selectDelete, select#selectSubject, select#selectDeleteSubject {
+    height: 9em;
+}
+
+input[type="radio"] {
+    border: 2px solid #DDDDDD;
+    padding: 0.5em;
+    /*
+    Das übliche Aussehen des Radiobuttons des Browsers wegmachen
+     */
+    -webkit-appearance: none;
+}
+input[type="radio"]:checked {
+    border: 2px solid #DDDDDD;
+    background-color: rgba(0, 255, 0, 0.207);
+}
+input[type="radio"].result {
+    border: 2px solid #DDDDDD;
+    padding: 0.5em;
+    /*
+    Das übliche Aussehen des Radiobuttons des Browsers wegmachen
+     */
+    -webkit-appearance: none;
+    margin: 0.3em;
+}
+input[type="radio"].result:checked {
+    border: 2px solid #DDDDDD;
+    background-color: rgba(0, 255, 0, 0.207);
+    margin: 0.3em;
+}
+
+input[type="checkbox"] {
+    border: 2px solid #DDDDDD;
+    padding: 0.5em;
+    /*
+    Das übliche Aussehen der Checkbox des Browsers wegmachen
+     */
+    -webkit-appearance: none;
+}
+input[type="checkbox"]:checked {
+    border: 2px solid #DDDDDD;
+    background-color: rgba(0, 255, 0, 0.207);
+}
+
+input[type="number"] {
+    height: 1.125em;
+    width: 25em;
+    background-color: #FFFFFF;
+    border-radius: 0 5px 5px 0;
+    border-width: 0;
+    /*
+    Auf none setzen, damit man das Inputfeld nicht verändern kann
+     */
+    resize: none;
+
+    padding: 0.5em;
+}
+
+button.button{
+    font-weight: bold;
+    height: 2em;
+    width: 15em;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+
+    margin-left: 3em;
+    margin-bottom: 1em;
+/*
+Übergang, wenn man später über den Button hovered, damit es einen übergang hat, von den Farben her
+ */
+    transition: all 1s;
+}
+button.button:hover {
+    background-color: rgba(0, 255, 0, 0.207);
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+}
+button.button.buttonDelete:hover {
+    background-color: rgba(255, 0, 0, 0.207);
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+}
+
+label.top {
+    font-weight: bolder;
+    margin-top: 1em;
+    margin-bottom: 0.1em;
+    display: block;
+}
+label.side {
+    float: left;
+    width: 5em;
+}
+label.longside {
+    float: left;
+    width: 40em;
+}
+label.result {
+    margin: 0.3em;
+    padding-left: 0.3em;
+}
+label.correct {
+    font-weight: bold;
+}
+
+details {
+    margin-bottom: 0.5em;
+}
+
+details[open] {
+    border: 2px solid #DDDDDD;
+    border-radius: 5px;
+
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+}
+
+details summary {
+    font-size: 1.25em;
+    font-weight: bold;
+    transition: width 1s;
+}
+
+details[open] summary {
+    background-color: #DDDDDD;
+    border-radius: 5px 5px 0 0;
+}
+
+.box {
+    border: 2px solid #DDDDDD;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
+
+.box h3 {
+    background-color: #DDDDDD;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.shadow {
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th {
+    text-align: left;
+    font-weight: bold;
+    padding: 0.2em;
+    display: table-cell;
+    vertical-align: middle;
+
+    max-width: 0;
+    overflow: hidden;
+}
+table th#question {
+    width: 15%;
+}
+table th#correctAnswer {
+    width: 12.5%;
+}
+table th#wrongAnswer0 {
+    width: 12.5%;
+}
+table th#wrongAnswer1 {
+    width: 12.5%;
+}
+table th#wrongAnswer2 {
+    width: 12.5%;
+}
+table th#difficultyId {
+    width: 10%;
+}
+table th#subjectId {
+    width: 10%;
+}
+table th#date {
+    width: 7.5%;
+}
+table th#contributor {
+    width: 7.5%;
+}
+
+table td {
+    border: 1px solid #DDDDDD;
+    padding: 0.3em;
+}
+table tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+table tr:last-child {
+    border: 2px solid #DDDDDD;
+    border-radius: 0 0 5px 5px;
+}
+table tr.data:hover {
+    background-color: #DDDDDD;
+}
+
+.difficulty {
+    width: 50em;
+}
+.degree {
+    display: block;
+    width: 25em;
+}
+
+form#formSelectEdit button {
+    margin: 0.5em 0 1em 3em;
+}
+
+button.sort {
+    display: inline-block;
+    background-color: #DDDDDD;
+    padding: 0.2em 0.8em;
+    transition: all 1s;
+    border: none;
+    height: 100%;
+}
+button.sort:hover {
+    background-color: rgba(0, 255, 0, 0.207);
+}
+button.sort[name="sort_desc"] {
+    border-radius: 5px 0 0 5px;
+}
+button.sort[name="sort_asc"] {
+    border-radius: 0 0 0 0;
+}
+form.sort {
+    float: right;
+    margin-right: 0;
+    display: inline-block;
+}
+#progressbar {
+    background-color: #DDDDDD;
+    padding: 0.3em;
+}
+
+#progressbar>div {
+    background-color: rgba(0, 255, 0, 0.5);
+    height: 1.125em;
+    border-radius: 5px;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+#progressbar>div>p {
+    margin: 0;
+    padding-right: 0.5em;
+    text-align: right;
+}
+
+.answers {
+    width: 50em;
+}
+.answer {
+    display: block;
+    width: 50em;
+}
